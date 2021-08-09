@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test, 励む～贺">
+    <meta name="keywords" content="github+hexo搭建博客, 励む～贺">
     <meta name="description" content="专注分享 专注知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test | 励む～贺</title>
+    <title>github+hexo搭建博客 | 励む～贺</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -248,12 +248,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test</h1>
+                    <h1 class="description center-align post-title">github+hexo搭建博客</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +369,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/">
+                                <span class="chip bg-color">随手记</span>
                             </a>
                         
                     </div>
@@ -385,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-08-06
+                    2021-08-08
                 </div>
                 
 
@@ -406,7 +406,75 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>jahdkjahkjd</p>
+                <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>1.Github账号<br>2.安装Node.js  </p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ node -v <span class="token comment" spellcheck="true">#若出现版本号说明已安装</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.安装Git  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"> $ <span class="token function">git</span> --version <span class="token comment" spellcheck="true">#若出现版本号说明已安装</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4.安装Hexo  </p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p><img src="../../pictures/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt="图片"><br>仓库的名字必须是username.github.io,其中username为github账户的用户名<br><img src="../../pictures/%E4%BB%93%E5%BA%93%E5%91%BD%E5%90%8D.png" alt="图片"><br>点击Create repositpry创建仓库</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ul>
+<li>安装Hexo</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>创建博客目录</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">mkdir</span> MyBlog <span class="token comment" spellcheck="true">#在任意目录下创建文件夹</span>
+$ <span class="token function">cd</span> MyBlog <span class="token comment" spellcheck="true">#进入文件夹</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>初始化目录</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo init
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>启动本地服务</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo s
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>此时通过浏览器访问<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%8F%AF%E7%9C%8B%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E6%95%88%E6%9E%9C">http://localhost:4000/，可看到本地编译效果</a></p>
+<h3 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h3><ul>
+<li>编辑MyBlog/_config.yml配置文件，将deploy节点的repo地址修改为仓库地址</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">deploy:
+  type: <span class="token function">git</span>
+  repo: git@github.com:AurorasNan/AurorasNan.github.io.git
+  branch: master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="../../pictures/%E9%85%8D%E7%BD%AEgit%E5%9C%B0%E5%9D%80.png" alt="图片"><br>这种方法适用于配置SSH Key后的，若没有配置，此处使用Https形式的地址</p>
+<ul>
+<li>安装插件</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>生成Github博客<pre class="line-numbers language-bash"><code class="language-bash">$ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d <span class="token comment" spellcheck="true">#清楚缓存&amp;&amp;产生静态网页&amp;&amp;部署到Github pages上</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+此时通过浏览器访问<a target="_blank" rel="noopener" href="http://username.github.io/%EF%BC%8C%E5%8F%AF%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%95%88%E6%9E%9C">http://username.github.io/，可看到你的博客效果</a></li>
+</ul>
+<h2 id="博客使用"><a href="#博客使用" class="headerlink" title="博客使用"></a>博客使用</h2><ul>
+<li>创建新的博客</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">'博客名'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>此时在MyBlog/source/_posts路径下可以看到新创建的.md格式文件</p>
+<ul>
+<li><p>使用markdown编辑器编辑文档</p>
+</li>
+<li><p>编辑完成后在本地预览</p>
+</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo s
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>编辑完成后上传Github</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="主题及优化"><a href="#主题及优化" class="headerlink" title="主题及优化"></a>主题及优化</h2><p>未完待续…</p>
 
                 
             </div>
@@ -433,7 +501,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hepuzheng.github.io/2021/08/06/test/">http://hepuzheng.github.io/2021/08/06/test/</a>
+                    <a href="http://hepuzheng.github.io/2021/08/08/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">http://hepuzheng.github.io/2021/08/08/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -471,8 +539,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/">
+                                    <span class="chip bg-color">随手记</span>
                                 </a>
                             
                         </div>
@@ -644,9 +712,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/08/08/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
@@ -664,9 +733,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -675,6 +744,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -693,13 +763,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/06/first/">
+                <a href="/2021/08/06/test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="first">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
                         
-                        <span class="card-title">first</span>
+                        <span class="card-title">test</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
